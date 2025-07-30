@@ -35,7 +35,7 @@ stage('test')
             echo "this is test B"
             }
         }
-
+    }
     post {
   success {
     archiveArtifacts artifacts: "**/target/*.jar"
@@ -47,5 +47,4 @@ stage('test')
     
 }
 
-}
 }
