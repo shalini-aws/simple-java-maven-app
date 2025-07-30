@@ -5,13 +5,18 @@ pipeline{
 tools {
   maven 'my-maven'
 }
-
-
+environment {
+  Name = "Shalini"
+}
+parameters {
+  string defaultValue: 'Bhupathi', name: 'LastName'
+}
 stages{
     stage('build')
     {
         steps {
         sh "mvn clean package"
+        echo "hello $Name ${params.LastName}"
         } 
         post {
   success {
